@@ -1,0 +1,17 @@
+{
+  "name": "preplift-ai",
+  "version": "1.0.0",
+  "description": "PrepLift AI is a full-stack GenAI-powered job preparation platform designed to help users streamline their interview readiness. It allows users to analyze resumes, identify skill gaps, and generate AI-driven interview questions along with ATS-friendly resumes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}
