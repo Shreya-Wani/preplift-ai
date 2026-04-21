@@ -1,10 +1,10 @@
 import React from 'react'
 import '../auth.form.scss'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router'
+import { useAuth } from '../hooks/useAuth'
 
 const Login = () => {
-    const navigate = useNavigate();
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
     }
