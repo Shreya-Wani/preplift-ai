@@ -6,25 +6,41 @@ export const useAuth = () => {
     const context = useContext(AuthContext)
     const { user, setUser, loading, setLoading } = context
 
-    const handleLogin = async ({email, password}) => {
+    const handleLogin = async ({ email, password }) => {
         setLoading(true)
-        const data = await login({email, password})
-        setUser(data.user)
-        setLoading(false)
+
+        try {
+            const data = await login({ email, password })
+            setUser(data.user)
+        } catch (err) {
+            console.error("Login error:", err)
+        } finally {
+            setLoading(false)
+        }
     }
 
-    const handleRegister = async ({name, email, password}) => {
+    const handleRegister = async ({ name, email, password }) => {
         setLoading(true)
-        const data = await register({name, email, password})    
-        setUser(data.user)
-        setLoading(false)
+        try {
+            const data = await register({ name, email, password })
+            setUser(data.user)
+        } catch (err) {
+            console.error("Register error:", err)
+        } finally {
+            setLoading(false)
+        }
     }
 
     const handleLogout = async () => {
         setLoading(true)
-        await logout()
-        setUser(null)
-        setLoading(false)
+        try {
+            const data = await logout()
+            setUser(null)
+        } catch (err) {
+            console.error("Logout error:", err)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return {
